@@ -18,7 +18,7 @@
     "threshold":        null
   },
 
-  "model_name":         "logreg_1nonlin",
+  "model_name":         "ModelLogReg1NonLin",
   "loss_func":          "logreg",
   "loss":{
     "group_power":      1.0,
