@@ -12,8 +12,11 @@ import argparse
 import json
 from a1_collect import prepare_collect
 from a2_filter import prepare_filter
-from a3_resample import prepare_resample
-from a4b_mask_embed import prepare_mask, prepare_embed
+from a4b_resample_mask_embed import (
+    prepare_mask,
+    prepare_embed,
+    prepare_resample,
+)
 from a6_impute import prepare_impute
 from a7_label import prepare_label
 
@@ -49,7 +52,7 @@ if __name__ == "__main__":
     print("=    SAMPLES FILTERING   =")
     prepare_filter(global_config, args.jobs, args.verbose)
     print("=       RESAMPLING       =")
-    prepare_resample(global_config, args.jobs, args.verbose)
+    fmris_maps = prepare_resample(global_config, args.jobs, args.verbose)
     print("=         MASKING        =")
     fmris_masked = prepare_mask(global_config, args.jobs, args.verbose)
     print("=        EMBEDDING       =")
